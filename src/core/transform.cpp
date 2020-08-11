@@ -249,6 +249,8 @@ Transform LookAt(const Point3f &pos, const Point3f &look, const Vector3f &up) {
     return ret;
 } */
 
+// seems it can be implemented even more efficiently:
+// http://dev.theomader.com/transform-bounding-boxes/
 Bounds3f Transform::operator()(const Bounds3f &b) const {
     const Transform &M = *this;
     Point3f newBase(M(Point3f(b.pMin.x, b.pMin.y, b.pMin.z)));
